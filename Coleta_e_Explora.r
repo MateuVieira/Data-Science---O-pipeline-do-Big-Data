@@ -1,5 +1,5 @@
 ## Diretório corrente 
-setwd("C:\\Users\\eduar\\OneDrive\\aBig Data\\aAlura\\R")
+setwd("C:\\Users\\mateu\\Documents\\GitHub\\R\\Data Science - O pipeline do Big Data")
 
 
 
@@ -14,10 +14,10 @@ library(XML)
 
 ## Iteração de 20 anos
 df_OVNI  <- data.frame()
-mes_corrente = 9
+mes_corrente = 11
 ano_corrente = 1997
 ano_mes_corrente = (ano_corrente * 100) + mes_corrente
-while (ano_mes_corrente  <= 201709) {
+while (ano_mes_corrente  <= 201811) {
   site <- paste("http://www.nuforc.org/webreports/ndxe", as.character(ano_mes_corrente), ".html")
   site <- gsub (" ", "", site)
   html2 <- GET(site)
@@ -38,9 +38,9 @@ while (ano_mes_corrente  <= 201709) {
   }
   print(ano_mes_corrente)
 }
-write.csv(rbind(df_OVNI), file = "OVNIS.csv") 
+write.csv(rbind(df_OVNI), file = "C:/Users/mateu/Documents/GitHub/R/Data Science - O pipeline do Big Data/OVNIS.csv") 
 
-# df_OVNI <- read.csv("OVNIS.csv",stringsAsFactors = FALSE)
+# df_OVNI <- read.csv("C:/Users/mateu/Documents/GitHub/R/Data Science - O pipeline do Big Data/OVNIS.csv",stringsAsFactors = FALSE)
 
 ######################################## 2) Explore
 
